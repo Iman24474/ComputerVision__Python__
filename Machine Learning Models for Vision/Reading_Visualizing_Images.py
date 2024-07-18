@@ -1,4 +1,6 @@
-import os
-import tensorflow_datasets.public_api as tfds
-
-_URL = "http://download.tensorflow.org/example_images/flower_photos.tgz"
+import tensorflow as tf
+print(tf.version.VERSION)
+device_name = tf.test.gpu_device_name()
+if device_name != '/device:GPU:0':
+    raise SystemError('GPU device not found')
+print('Found GPU at: {}'.format(device_name))
